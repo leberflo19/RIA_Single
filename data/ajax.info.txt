@@ -1,0 +1,4 @@
+Ajax [ˈeidʒæks] (auch AJAX; Akronym von englisch Asynchronous JavaScript and XML) bezeichnet ein Konzept der asynchronen Datenübertragung
+ zwischen einem Browser und dem Server. 
+ Dieses ermöglicht es, HTTP-Anfragen durchzuführen, während eine HTML-Seite angezeigt wird,
+ und die Seite zu verändern, ohne sie komplett neu zu laden.

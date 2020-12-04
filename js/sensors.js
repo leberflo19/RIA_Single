@@ -7,7 +7,9 @@ jQuery(document).ready(function() {
             var leftToRight = event.gamma;
             // beta: front back motion
             var frontToBack = event.beta;
-
+            $("#alpha").text(rotateDegrees);
+            $("#beta").text(leftToRight);
+            $("#gamma").text(frontToBack);
         }, true);
     }
 });

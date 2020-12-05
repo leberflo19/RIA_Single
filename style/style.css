@@ -141,6 +141,8 @@ button:active {
   transform: translateY(var(--border-size));
 }
 
+#mapid { height: 20rem; }
+
 canvas { background: #eee; }
 
 @media only screen and (max-width:60rem) {

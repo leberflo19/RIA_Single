@@ -22,7 +22,7 @@ class Paddle{
 
 class Brick{
 
-    width = 65;
+    width = 55;
     height = 20;
     padding = 10;
     offsetTop = 30;

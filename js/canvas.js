@@ -171,18 +171,13 @@ jQuery(document).ready(function() {
     drawStartMenu('Starten');
 
     function drawStartMenu(title){
-        let rect = {
-            x:150,
-            y:150,
-            width:200,
-            heigth:100
-        };
         canvas.addEventListener('click', function(evt) {
             setInterval(draw, 10);
             setInterval(updateBricks, 2999);
         }, false);
+
         ctx.beginPath();
-        ctx.rect(40, canvas.height/2-100, canvas.width-90, canvas.height/2.5); 
+        ctx.rect(20, canvas.height/2-100, canvas.width-40, canvas.height/2.5); 
         ctx.fillStyle = 'black'; 
         ctx.fillStyle = 'rgba(225,225,225,0.5)';
         ctx.fillRect(25,72,32,32);
@@ -193,6 +188,6 @@ jQuery(document).ready(function() {
         ctx.closePath();
         ctx.font = '40pt Kremlin Pro Web';
         ctx.fillStyle = 'black';
-        ctx.fillText(title, 150, 200);
+        ctx.fillText(title, 100, 200);
     }
 });

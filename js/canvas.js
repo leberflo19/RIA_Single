@@ -188,6 +188,6 @@ jQuery(document).ready(function() {
         ctx.closePath();
         ctx.font = '40pt Kremlin Pro Web';
         ctx.fillStyle = 'black';
-        ctx.fillText(title, 100, 200);
+        ctx.fillText(title, 80, 200);
     }
 });

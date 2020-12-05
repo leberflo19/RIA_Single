@@ -5,6 +5,6 @@ function loadAjaxInfo() {
         $("#ajax_info").html(this.responseText);
       }
     };
-    xhttp.open("GET", "http://localhost/ria01/data/ajax.info.txt", true);
+    xhttp.open("GET", "data/ajax.info.txt", true);
     xhttp.send();
   }

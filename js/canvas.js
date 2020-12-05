@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
 
     let rightPressed = false;
     let leftPressed = false;
-    let brickColumnCount = 5;
+    let brickColumnCount = 4;
     let brickRowCount = 1;
 
     let score = 0;

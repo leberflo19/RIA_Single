@@ -6,6 +6,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
         <link rel="stylesheet" href="style/style.css">
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
         
         <script src="js/app.js"></script>
         <script src="js/jsoop.js"></script>
@@ -18,7 +25,7 @@
     </head>
 <body>
   <nav class="sidebar"> 
-    <img src="img/_.jpg" style="width: 100%;" />
+    <img src="img/flo.jpg" style="width: 100%;" />
     <a href="#html">HTML</a>
     <a href="#jsOop">JS OOP</a>
     <a href="#ajax">AJAX</a>
@@ -26,6 +33,7 @@
     <a href="#canvas2D">Canvas2D</a> 
     <a href="#Sensors">Sensoren</a>
     <a href="#Notifications">Benachrichtigungen</a>  
+    <a href="#Map">Karte</a>  
   </nav>
   <div class="top-menu">
     <div style="text-align: center;">
@@ -37,6 +45,7 @@
       <a href="#RDW">Responsive Design</a>    
       <a href="#Sensors">Sensoren</a>   
       <a href="#Notifications">Benachrichtigungen</a>  
+      <a href="#Map">Karte</a>  
     </div>
   </div>
   <div id="content">
@@ -95,6 +104,9 @@
 
         <h2 id="Notifications">Benachrichtigungen</h2>
         <button type="button" onclick="showNotification()">Benachrichtige mich!</button>
+
+        <h2 id="Map">Karte</h2>
+        <div id="mapid"></div>
       </div>
   </div>
       

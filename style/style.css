@@ -141,7 +141,7 @@ button:active {
   transform: translateY(var(--border-size));
 }
 
-#mapid { height: 20rem; margin: 4rem; }
+#mapid { height: 20rem; margin: 2rem; }
 
 canvas { background: #eee; }
 

@@ -1,4 +1,5 @@
 jQuery(document).ready(function() {
+    let started = false;
     const canvas = $("#myCanvas")[0];
     const ctx = canvas.getContext("2d");
 
@@ -113,6 +114,7 @@ jQuery(document).ready(function() {
         ctx.font = "16px Arial";
         ctx.fillStyle = "black";
         ctx.fillText("Punkte: "+score, 8, 20);
+        localStorage.setItem('high_score', score);
     }
 
     function draw() {
@@ -171,9 +173,13 @@ jQuery(document).ready(function() {
     drawStartMenu('Starten');
 
     function drawStartMenu(title){
+
         canvas.addEventListener('click', function(evt) {
-            setInterval(draw, 10);
-            setInterval(updateBricks, 2999);
+            if(!started){
+                started = true;
+                setInterval(draw, 10);
+                setInterval(updateBricks, 2999);
+            }
         }, false);
 
         ctx.beginPath();

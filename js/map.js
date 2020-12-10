@@ -2,6 +2,8 @@ var mymap;
 let deleteEnabled = false;
 let draggable = false;
 
+let highscore = localStorage.getItem('points');
+
 jQuery(document).ready(function() {
     var options = {
         enableHighAccuracy: true,

@@ -22,13 +22,13 @@ body{
 }
 
 #content{
-  margin-left: 10rem;
+  margin-left: 12rem;
   
 }
 .main{
   text-align: center;
-  max-width: 60rem;
-  margin: 0 auto;
+  max-width: 50rem;
+  margin: 2 auto;
   transition: max-width 300ms ease-in;
 }
 
@@ -153,13 +153,14 @@ canvas { background: #eee; }
 
 /* Responsive */
 @media only screen and (max-width:60rem) {
-
   #content {
-    margin-left: 1rem;
+     margin-left: 1rem;
   }
+    
   h1{
     margin-top: 13rem;
   }
+
   .sidebar{
     display: none;
   }
@@ -185,6 +186,9 @@ canvas { background: #eee; }
   }
   canvas{
     display: none;
+  }
+  .main{
+    margin: 0;
   }
 }
 

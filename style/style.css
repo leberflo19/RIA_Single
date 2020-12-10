@@ -20,6 +20,7 @@ body{
 * {
   box-sizing: border-box;
 }
+
 #content{
   margin-left: 10rem;
   
@@ -28,17 +29,20 @@ body{
   text-align: center;
   max-width: 60rem;
   margin: 0 auto;
+  transition: max-width 300ms ease-in;
 }
+
 .sidebar{
   top:0;
-  height: 100%; 
+  height: 100%;
   background: #222;
   overflow: hidden;
   float:left;
   width:10rem;
   position: fixed;
-  
 }
+
+
 p{
   color:var(--color-secondary);
 }
@@ -60,6 +64,7 @@ p{
   display: none;
   opacity: 0.90;
   background-color: black;
+  transition: width 300ms ease-in;
 }
 
 .top-menu a{
@@ -141,10 +146,12 @@ button:active {
   transform: translateY(var(--border-size));
 }
 
-#mapid { height: 20rem; margin: 2rem; }
+#mymap { height: 20rem; margin: 2rem; }
 
 canvas { background: #eee; }
 
+
+/* Responsive */
 @media only screen and (max-width:60rem) {
 
   #content {
@@ -160,3 +167,15 @@ canvas { background: #eee; }
     display: table;
   }
 }
+
+/* Animations */
+.animate-zoom {animation:animatezoom 0.6s}
+@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+.animate-opacity{animation:opac 0.8s}
+@keyframes opac{from{opacity:0} to{opacity:1}}
+.animate-top{ animation:animatetop 0.5s }
+@keyframes animatetop{from{top:-100%;opacity:0} to{top:0;opacity:1}}
+.animate-right{ animation:animateright 1s }
+@keyframes animateright{from{right:-100%;opacity:0} to{top:0;opacity:1}}
+.animate-left{ animation:animateleft 1s }
+@keyframes animateleft{from{left:-100%;opacity:0} to{top:0;opacity:1}}

@@ -88,7 +88,7 @@ hr{
 }
 
 h1{
-  font-size: 3.25rem;
+  font-size: 3rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
@@ -155,16 +155,36 @@ canvas { background: #eee; }
 @media only screen and (max-width:60rem) {
 
   #content {
-    margin-left: 0;
+    margin-left: 1rem;
   }
   h1{
-    margin-top: 12rem;
+    margin-top: 13rem;
   }
   .sidebar{
     display: none;
   }
   .top-menu{
     display: table;
+  }
+}
+
+
+@media only screen and (max-width:359px) {
+
+  #content {
+    margin-left: 0;
+  }
+  h1{
+    margin-top: 0.5rem;
+  }
+  .sidebar{
+    display: none;
+  }
+  .top-menu{
+    display: none;
+  }
+  canvas{
+    display: none;
   }
 }
 

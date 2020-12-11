@@ -163,6 +163,7 @@ canvas { background: #eee; }
   }
   .sidebar{
     display: none;
+    /* transition: visibility 0.2s linear; */
   }
   .top-menu{
     display: table;
@@ -183,6 +184,7 @@ canvas { background: #eee; }
   }
   .top-menu{
     display: none;
+    /* transition: visibility 0.2s linear; */
   }
   canvas{
     display: none;
@@ -197,9 +199,22 @@ canvas { background: #eee; }
 @keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
 .animate-opacity{animation:opac 0.8s}
 @keyframes opac{from{opacity:0} to{opacity:1}}
-.animate-top{ animation:animatetop 0.8s }
+.animate-top{ animation:animatetop 0.8s}
 @keyframes animatetop{from{top:-100%;opacity:0} to{top:0;opacity:1}}
 .animate-right{ animation:animateright 0.8s }
 @keyframes animateright{from{right:-100%;opacity:0} to{right:0;opacity:1}}
 .animate-left{ animation:animateleft 0.8s }
 @keyframes animateleft{from{left:-100%;opacity:0} to{left:0;opacity:1}}
+
+@keyframes fadeOut {
+  0% { opacity: 1;}
+  99% { opacity: 0.01;width: 100%; height: 100%;}
+  100% { opacity: 0;width: 0; height: 0;}
+}
+
+.display-none.on{
+  display: block;
+  -webkit-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}

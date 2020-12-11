@@ -2,19 +2,30 @@ var mymap;
 let deleteEnabled = false;
 let draggable = false;
 
-let highscore = localStorage.getItem('points');
+let points = JSON.parse(localStorage.getItem('points'));
+
+
 
 jQuery(document).ready(function() {
+      
+    mymap = L.map('mymap').setView([51.505, -0.09], 13);
+
+    if(!points)
+      points = new Array();
+    else
+      points.forEach(
+        function(point){
+          addMarkerCore(point.lat, point.long);
+        }
+      );
+      
     var options = {
         enableHighAccuracy: true,
         timeout: 5000,
         maximumAge: 0
-      };
-
-
+    };   
     
     
-    mymap = L.map('mymap').setView([51.505, -0.09], 13);
 
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -43,8 +54,6 @@ jQuery(document).ready(function() {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
     
-
-    
 });
 
 
@@ -55,6 +64,12 @@ function addpoi(){
 function addMarker(e){
   latit = e.latlng.lat;
   longit = e.latlng.lng;
+  addMarkerCore(latit, longit);
+  points.push({lat: latit, long: longit});
+  localStorage.setItem('points', JSON.stringify(points));
+}
+
+function addMarkerCore(latit, longit){
   var marker = new L.marker([latit,longit], {draggable:'true'});
 
   marker.on('dragend', function(event){
@@ -71,6 +86,8 @@ function addMarker(e){
 
   mymap.addLayer(marker);
   mymap.off('click', addMarker);
+
+  
 }
 
 function removeMarker(e){

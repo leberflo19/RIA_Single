@@ -4,8 +4,6 @@ let draggable = false;
 
 let points = JSON.parse(localStorage.getItem('points'));
 
-
-
 jQuery(document).ready(function() {
       
     mymap = L.map('mymap').setView([51.505, -0.09], 13);
@@ -65,7 +63,7 @@ function addMarker(e){
   latit = e.latlng.lat;
   longit = e.latlng.lng;
   addMarkerCore(latit, longit);
-  points.push({lat: latit, long: longit});
+  points.push(new POI(latit, longit, "POI"));
   localStorage.setItem('points', JSON.stringify(points));
 }
 
@@ -85,9 +83,7 @@ function addMarkerCore(latit, longit){
   marker.on('click', removeMarker);  
 
   mymap.addLayer(marker);
-  mymap.off('click', addMarker);
-
-  
+  mymap.off('click', addMarker);  
 }
 
 function removeMarker(e){
@@ -96,13 +92,8 @@ function removeMarker(e){
   }
   deleteEnabled = false;
 }
+
 function removepoi(){
   deleteEnabled = true;
 }
-
-function test(){
-  console.log("test");
-}
-
-
 

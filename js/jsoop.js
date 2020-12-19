@@ -35,3 +35,11 @@ class Brick{
         this.color = color;
     }
 }
+
+class POI{
+    constructor(lat, long, description){
+        this.lat = lat;
+        this.long = long;
+        this.description = description;
+    }
+}

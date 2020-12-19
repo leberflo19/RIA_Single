@@ -20,25 +20,29 @@ body{
 * {
   box-sizing: border-box;
 }
+
 #content{
-  margin-left: 10rem;
+  margin-left: 12rem;
   
 }
 .main{
   text-align: center;
-  max-width: 60rem;
+  max-width: 50rem;
   margin: 0 auto;
+  transition: max-width 300ms ease-in;
 }
+
 .sidebar{
   top:0;
-  height: 100%; 
+  height: 100%;
   background: #222;
   overflow: hidden;
   float:left;
   width:10rem;
   position: fixed;
-  
 }
+
+
 p{
   color:var(--color-secondary);
 }
@@ -52,6 +56,7 @@ p{
 
 .top-menu{
   top:0;
+  left:-0;
   z-index: 2;
   width: 100%;
   position: fixed;
@@ -60,6 +65,7 @@ p{
   display: none;
   opacity: 0.90;
   background-color: black;
+  transition: width 300ms ease-in;
 }
 
 .top-menu a{
@@ -83,7 +89,7 @@ hr{
 }
 
 h1{
-  font-size: 3.25rem;
+  font-size: 3rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
@@ -130,6 +136,7 @@ button:focus {
   -webkit-transform:scale(1.1,1.1);
   -moz-transform:scale(1.1,1.1);
 }
+
 button:focus:not(:hover) {
   flex-grow: 1;
   color: var(--color-tertiary);
@@ -141,22 +148,74 @@ button:active {
   transform: translateY(var(--border-size));
 }
 
-#mapid { height: 20rem; margin: 2rem; }
+#mymap { height: 20rem; margin: 2rem; }
 
 canvas { background: #eee; }
 
+
+/* Responsive */
 @media only screen and (max-width:60rem) {
+
+  #content {
+    margin-left: 1rem;
+  }
+  h1{
+    margin-top: 13rem;
+  }
+  .sidebar{
+    display: none;
+    /* transition: visibility 0.2s linear; */
+  }
+  .top-menu{
+    display: table;
+  }
+}
+
+
+@media only screen and (max-width:359px) {
 
   #content {
     margin-left: 0;
   }
   h1{
-    margin-top: 9rem;
+    margin-top: 0.5rem;
   }
   .sidebar{
     display: none;
   }
   .top-menu{
-    display: table;
+    display: none;
+    /* transition: visibility 0.2s linear; */
   }
+  canvas{
+    display: none;
+  }
+  .main{
+    margin:0;
+  }
+}
+
+/* Animations */
+.animate-zoom {animation:animatezoom 00.8s}
+@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+.animate-opacity{animation:opac 0.8s}
+@keyframes opac{from{opacity:0} to{opacity:1}}
+.animate-top{ animation:animatetop 0.8s}
+@keyframes animatetop{from{top:-100%;opacity:0} to{top:0;opacity:1}}
+.animate-right{ animation:animateright 0.8s }
+@keyframes animateright{from{right:-100%;opacity:0} to{right:0;opacity:1}}
+.animate-left{ animation:animateleft 0.8s }
+@keyframes animateleft{from{left:-100%;opacity:0} to{left:0;opacity:1}}
+
+@keyframes fadeOut {
+  0% { opacity: 1;}
+  99% { opacity: 0.01;width: 100%; height: 100%;}
+  100% { opacity: 0;width: 0; height: 0;}
+}
+
+.display-none.on{
+  display: block;
+  -webkit-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
 }
